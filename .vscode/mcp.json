@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "chakra-ui": {
+      "command": "npx",
+      "args": ["-y", "@chakra-ui/react-mcp"],
+      "env": {
+        "PATH": "/home/zach/.nvm/versions/node/v24.21.0/bin:${env:PATH}"
+      }
+    }
+  }
+}
