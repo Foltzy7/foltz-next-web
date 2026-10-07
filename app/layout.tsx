@@ -7,7 +7,7 @@ import { Provider } from "@/components/ui/provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Home | Foltz Web",
+  title: "Home | Foltz Concepts",
   description: "World of Zach Foltz",
 };
 

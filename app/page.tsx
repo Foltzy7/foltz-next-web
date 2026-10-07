@@ -1,12 +1,10 @@
 import {
   Box,
   Button,
-  Card,
   Container,
   Flex,
   Heading,
   HStack,
-  Icon,
   Link,
   SimpleGrid,
   Stack,
@@ -15,108 +13,49 @@ import {
 import NextLink from "next/link"
 import {
   LuArrowDownRight,
-  LuArrowUpRight,
   LuBriefcaseBusiness,
   LuGithub,
-  LuHouse,
   LuUserRound,
 } from "react-icons/lu"
+import { GlowCard } from "@/components/glow-card"
+import { SiteNavigation } from "@/components/site-navigation"
 
 const destinations = [
   {
     title: "Experience",
     description:
       "Degrees, professional work, and volunteer experience gathered in one place.",
-    href: "mailto:zfoltzy7@gmail.com?subject=Professional%20experience",
-    action: "Ask about my experience",
+    href: "/experience",
     icon: LuBriefcaseBusiness,
-    external: true,
+    external: false,
+    actionLabel: "View my experience",
   },
   {
     title: "Projects",
     description:
       "Explore the projects I have built and the things I work on in my free time.",
     href: "https://github.com/Foltzy7",
-    action: "Visit my GitHub",
     icon: LuGithub,
     external: true,
+    externalLabel: "Opens in a new tab",
+    ariaLabel: "Projects: opens GitHub in a new tab",
+    actionLabel: "Browse my GitHub projects",
   },
   {
     title: "About Me",
     description:
       "Get to know me, what I enjoy, and what keeps me curious outside of work.",
     href: "/about",
-    action: "A little about me",
     icon: LuUserRound,
     external: false,
+    actionLabel: "Get to know me",
   },
 ]
 
 export default function Home() {
   return (
     <Box minH="100vh" bg="brand.950" color="brand.50">
-      <Box
-        as="header"
-        borderBottomWidth="1px"
-        borderColor="whiteAlpha.200"
-        bg="brand.950"
-      >
-        <Container maxW="6xl" py={{ base: 4, md: 5 }}>
-          <Flex
-            align="center"
-            justify="space-between"
-            gap={6}
-            wrap="wrap"
-          >
-            <HStack gap={3}>
-              <Flex
-                align="center"
-                justify="center"
-                boxSize={10}
-                rounded="xl"
-                bg="brand.500"
-                color="white"
-              >
-                <Icon boxSize={5} aria-hidden="true">
-                  <LuHouse />
-                </Icon>
-              </Flex>
-              <Text fontSize="lg" fontWeight="bold" letterSpacing="tight">
-                Foltz Web
-              </Text>
-            </HStack>
-
-            <HStack as="nav" aria-label="Main navigation" gap={{ base: 4, md: 8 }}>
-              <Link
-                asChild
-                color="white"
-                fontWeight="semibold"
-                textDecoration="none"
-              >
-                <NextLink href="/">Home</NextLink>
-              </Link>
-              <Link
-                asChild
-                color="brand.200"
-                _hover={{ color: "white" }}
-                textDecoration="none"
-              >
-                <NextLink href="/about">About Me</NextLink>
-              </Link>
-              <Link
-                href="https://github.com/Foltzy7"
-                target="_blank"
-                rel="noreferrer"
-                color="brand.200"
-                _hover={{ color: "white" }}
-                textDecoration="none"
-              >
-                Projects
-              </Link>
-            </HStack>
-          </Flex>
-        </Container>
-      </Box>
+      <SiteNavigation currentPage="home" />
 
       <Box
         as="main"
@@ -171,7 +110,7 @@ export default function Home() {
                 >
                   Welcome to{" "}
                   <Box as="span" color="brand.300">
-                    Foltz Web
+                    Foltz Concepts
                   </Box>
                 </Heading>
                 <Text
@@ -229,78 +168,10 @@ export default function Home() {
 
               <SimpleGrid columns={{ base: 1, md: 3 }} gap={5}>
                 {destinations.map((destination) => (
-                  <Card.Root
+                  <GlowCard
                     key={destination.title}
-                    as="article"
-                    variant="outline"
-                    minH="17rem"
-                    borderColor="whiteAlpha.200"
-                    bg="brand.900"
-                    color="white"
-                    transition="transform 180ms ease, border-color 180ms ease, background 180ms ease"
-                    _hover={{
-                      transform: "translateY(-4px)",
-                      borderColor: "brand.400",
-                      bg: "brand.800",
-                    }}
-                  >
-                    <Card.Body gap={5} p={{ base: 6, md: 7 }}>
-                      <Flex
-                        align="center"
-                        justify="center"
-                        boxSize={12}
-                        rounded="xl"
-                        bg="brand.500"
-                        color="white"
-                      >
-                        <Icon boxSize={6} aria-hidden="true">
-                          <destination.icon />
-                        </Icon>
-                      </Flex>
-                      <Stack gap={2} flex={1}>
-                        <Card.Title fontSize="xl">
-                          {destination.title}
-                        </Card.Title>
-                        <Card.Description
-                          color="brand.200"
-                          lineHeight="1.7"
-                        >
-                          {destination.description}
-                        </Card.Description>
-                      </Stack>
-                      <Link
-                        asChild
-                        w="fit-content"
-                        color="brand.300"
-                        fontWeight="semibold"
-                        _hover={{ color: "white" }}
-                      >
-                        {destination.external ? (
-                          <a
-                            href={destination.href}
-                            target={
-                              destination.href.startsWith("https://")
-                                ? "_blank"
-                                : undefined
-                            }
-                            rel={
-                              destination.href.startsWith("https://")
-                                ? "noreferrer"
-                                : undefined
-                            }
-                          >
-                            {destination.action}
-                            <LuArrowUpRight />
-                          </a>
-                        ) : (
-                          <NextLink href={destination.href}>
-                            {destination.action}
-                            <LuArrowUpRight />
-                          </NextLink>
-                        )}
-                      </Link>
-                    </Card.Body>
-                  </Card.Root>
+                    {...destination}
+                  />
                 ))}
               </SimpleGrid>
             </Stack>
@@ -322,7 +193,7 @@ export default function Home() {
             direction={{ base: "column", sm: "row" }}
           >
             <Text color="brand.200" fontSize="sm">
-              © Foltz Web
+              © Foltz Concepts
             </Text>
             <HStack gap={6} wrap="wrap">
               <Link
