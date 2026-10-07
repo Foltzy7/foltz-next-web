@@ -37,7 +37,12 @@ export function SiteNavigation({ currentPage }: SiteNavigationProps) {
                 <LuHouse />
               </Icon>
             </Flex>
-            <Text fontSize="lg" fontWeight="bold" letterSpacing="tight">
+            <Text
+              fontFamily="var(--font-brand), cursive"
+              fontSize="2xl"
+              fontWeight="700"
+              letterSpacing="normal"
+            >
               Foltz Concepts
             </Text>
           </HStack>

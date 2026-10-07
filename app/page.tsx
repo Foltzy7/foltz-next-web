@@ -109,7 +109,13 @@ export default function Home() {
                   color="white"
                 >
                   Welcome to{" "}
-                  <Box as="span" color="brand.300">
+                  <Box
+                    as="span"
+                    color="brand.300"
+                    fontFamily="var(--font-brand), cursive"
+                    fontWeight="700"
+                    letterSpacing="normal"
+                  >
                     Foltz Concepts
                   </Box>
                 </Heading>
@@ -192,7 +198,12 @@ export default function Home() {
             gap={3}
             direction={{ base: "column", sm: "row" }}
           >
-            <Text color="brand.200" fontSize="sm">
+            <Text
+              color="brand.200"
+              fontFamily="var(--font-brand), cursive"
+              fontSize="lg"
+              fontWeight="600"
+            >
               © Foltz Concepts
             </Text>
             <HStack gap={6} wrap="wrap">
