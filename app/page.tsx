@@ -78,28 +78,6 @@ export default function Home() {
         <Container maxW="6xl" position="relative">
           <Stack gap={{ base: 10, md: 14 }}>
             <Stack maxW="3xl" gap={6}>
-              <HStack
-                w="fit-content"
-                gap={2}
-                rounded="full"
-                borderWidth="1px"
-                borderColor="whiteAlpha.300"
-                bg="whiteAlpha.100"
-                px={4}
-                py={2}
-              >
-                <Box boxSize={2} rounded="full" bg="brand.400" />
-                <Text
-                  fontSize="xs"
-                  fontWeight="bold"
-                  letterSpacing="0.14em"
-                  textTransform="uppercase"
-                  color="brand.100"
-                >
-                  Personal portfolio
-                </Text>
-              </HStack>
-
               <Stack gap={4}>
                 <Heading
                   as="h1"
@@ -115,6 +93,7 @@ export default function Home() {
                     fontFamily="var(--font-brand), cursive"
                     fontWeight="700"
                     letterSpacing="normal"
+                    textShadow="0 0 2px {colors.brand.100/70}, 0 0 5px {colors.brand.400/75}, 0 0 11px {colors.brand.500/55}"
                   >
                     Foltz Concepts
                   </Box>
