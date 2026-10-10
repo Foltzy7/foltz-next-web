@@ -67,19 +67,43 @@ export default function Experience() {
                 </Text>
               </Stack>
 
-              <Button
-                asChild
-                w="fit-content"
-                colorPalette="brand"
-                bg="brand.500"
-                color="white"
-                _hover={{ bg: "brand.400" }}
+              <Stack
+                direction={{ base: "column", sm: "row" }}
+                align={{ base: "stretch", sm: "center" }}
+                gap={3}
               >
-                <a href="mailto:zfoltzy7@gmail.com?subject=Experience">
-                  <LuMail />
-                  Contact me about my experience
-                </a>
-              </Button>
+                <Button
+                  asChild
+                  w="fit-content"
+                  colorPalette="brand"
+                  bg="brand.500"
+                  color="white"
+                  _hover={{ bg: "brand.400" }}
+                >
+                  <a href="mailto:zfoltzy7@gmail.com?subject=Experience">
+                    <LuMail />
+                    Contact me about my experience
+                  </a>
+                </Button>
+
+                <Button
+                  asChild
+                  w="fit-content"
+                  variant="outline"
+                  borderColor="whiteAlpha.300"
+                  color="brand.50"
+                  _hover={{ bg: "whiteAlpha.100" }}
+                >
+                  <a
+                    href="https://s3.amazonaws.com/www.zachfoltz.com/Zach-Foltz-Resume.pdf"
+                    download="Zach-Foltz-Resume.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Download resume
+                  </a>
+                </Button>
+              </Stack>
             </Stack>
           </Stack>
         </Container>
