@@ -1,8 +1,11 @@
 import type { Metadata } from "next"
 import { Box, Container, Heading, Stack, Text } from "@chakra-ui/react"
 
-const familyCalendarUrl =
-  "https://calendar.google.com/calendar/embed?src=d9de3ef9e9442f872bfeadbcf5256d887c6b3af5a5833c7fb351eb9a46dd9a6a%40group.calendar.google.com&ctz=America%2FChicago"
+const familyCalendarUrl = process.env.FAMILY_CALENDAR_URL
+
+if (!familyCalendarUrl) {
+  throw new Error("FAMILY_CALENDAR_URL must be set to build the family page.")
+}
 
 export const metadata: Metadata = {
   title: "Family | Foltz Concepts",
